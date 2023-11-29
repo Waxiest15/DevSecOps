@@ -22,7 +22,7 @@ class ExampleTest extends TestCase
 
     public function test_sum(): void
     {
-        $a = 1;
+        $a = 10;
         $b = 10;
         $controlador = new Controller();
         $suma = $controlador->sumarDosNumeros($a, $b);
@@ -31,7 +31,7 @@ class ExampleTest extends TestCase
 
     public function test_concatenar_texto(): void
     {
-        $textos = ["Esto", "es", "una", "Prueba"];
+        $textos = ["Esto", "es", "una", 1];
         $controlador = new Controller();
         $cadena = $controlador->concatenarTexto($textos);
         $this->assertIsString($cadena);
@@ -42,7 +42,7 @@ class ExampleTest extends TestCase
         $numeros = [1, 2, 3, 4, 5, 6, 7];
         $controlador = new Controller();
         $promedio = $controlador->calcularPromedio($numeros);
-        $this->assertIsFloat($promedio);
+        $this->assertIsInt($promedio);
         $this->assertGreaterThanOrEqual(0, $promedio);
     }
 
